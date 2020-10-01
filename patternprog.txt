@@ -1,60 +1,74 @@
 #include <iostream>
 #include <string>
-#include <bits/stdc++.h> 
+#include <bits/stdc++.h>
 
 using namespace std;
 
-int main()
+int
+main ()
 {
-    int n, min, cnt=0,cnt1=0 ;char x;
-    std::vector<string> str1;
-    string temp;
-    vector<string> str2;
-    vector<int> num1;
-    vector<int> num2;
-    cout<<"Enter value for n\n";
-    cin>>n;
-    for(int i=0;i<n;i++){
-        cout<<"Enter first string \n";
-        cin>>temp;
-        str1.push_back(temp);
-        cout<<"Enter second string\n";
-        cin>>temp;
-        str2.push_back(temp);
+  int n, min, cnt = 0, cnt1 = 0;
+  char x;
+  std::vector < string > str1;
+  string temp;
+  vector < string > str2;
+  vector < int >num1;
+  vector < int >num2;
+  cout << "Enter value for n\n";
+  cin >> n;
+  for (int i = 0; i < n; i++)
+    {
+      cout << "Enter first string \n";
+      cin >> temp;
+      str1.push_back (temp);
+      cout << "Enter second string\n";
+      cin >> temp;
+      str2.push_back (temp);
     }
-    for(int i=0;i<n;i++){
-        for(int j = 0;j<str1[i].size();j++){
-            x = str1[i].at(j);
-            num1.push_back(x);
-        }
-        for(int j = 0;j<str2[i].size();j++){
-            x = str2[i].at(j);
-            num2.push_back(x);
-        }
-        sort(num1.begin(),num1.end());
-        sort(num2.begin(),num2.end());
-        min = num1.at(0);
-        for(int j =1;j<num1.size()-1;j++){
-            if(min - num1.at(j) == 1){
-                cnt++;
-                min =num1.at(j) ;
-            }
-        }min = num2.at(0);
-        for(int j =1;j<num2.size()-1;j++){
-            if(min - num2.at(j) == 1){
-                cnt1++;
-                min =num2.at(j) ;
-            }
-        }
-        if(cnt == cnt1){
-            cout<<"\" "<<"YES \""<<"\n";
-        }else{
-             cout<<"\" "<<"NO \""<<"\n";
-        }
-        num1.erase(num1.begin(),num1.end());
-        num2.erase(num2.begin(),num2.end());
+  for (int i = 0; i < n; i++)
+    {
+      for (int j = 0; j < str1[i].size (); j++)
+	{
+	  x = str1[i].at (j);
+	  num1.push_back (x);
+	}
+      for (int j = 0; j < str2[i].size (); j++)
+	{
+	  x = str2[i].at (j);
+	  num2.push_back (x);
+	}
+      sort (num1.begin (), num1.end ());
+      sort (num2.begin (), num2.end ());
+      min = num1.at (0);
+      for (int j = 1; j < num1.size () - 1; j++)
+	{
+	  if (min - num1.at (j) == 1)
+	    {
+	      cnt++;
+	      min = num1.at (j);
+	    }
+	}
+      min = num2.at (0);
+      for (int j = 1; j < num2.size () - 1; j++)
+	{
+	  if (min - num2.at (j) == 1)
+	    {
+	      cnt1++;
+	      min = num2.at (j);
+	    }
+	}
+      if (cnt == cnt1)
+	{
+	  cout << "\" " << "YES \"" << "\n";
+	}
+      else
+	{
+	  cout << "\" " << "NO \"" << "\n";
+	}
+      num1.erase (num1.begin (), num1.end ());
+      num2.erase (num2.begin (), num2.end ());
     }
-    
-    
-    return 0;
+
+
+  return 0;
 }
